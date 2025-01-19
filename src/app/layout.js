@@ -1,12 +1,15 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Lato, Open_Sans } from "next/font/google";
+import { Header } from "@/components/Header";
+import "@/styles/styles.sass";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const lato = Lato({
+  variable: "--font-lato",
   subsets: ["latin"],
+  weight: ["400", "700", "900"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const openSans = Open_Sans({
+  variable: "--font-open-sans",
   subsets: ["latin"],
 });
 
@@ -18,7 +21,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body
+        className={`${openSans.variable} ${openSans.variable} ${lato.variable}`}
+      >
+        <Header />
         {children}
       </body>
     </html>
